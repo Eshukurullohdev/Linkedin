@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from LinkedIn.forms import PostForm
 from .models import Post
 
@@ -20,3 +20,8 @@ def home(request):
     posts = Post.objects.all().order_by('-created_at')
     return render(request, 'home.html', {'form':form, 'posts': posts })
 
+
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)  # Post mavjudligini tekshiramiz
+    post.delete()  # Postni bazadan o‘chiramiz
+    return redirect('home')
