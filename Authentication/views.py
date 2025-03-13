@@ -1,3 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Profil  
+def profil(request):
+    profil = Profil.objects.all()
+    return render(request, 'profile.html', {'profil':profil})
