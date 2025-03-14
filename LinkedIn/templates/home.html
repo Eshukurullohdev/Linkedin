@@ -124,36 +124,18 @@
         <div class="space-y-2 mt-3">
             <div class="w-[555px] mx-auto bg-white  rounded-lg py-6 p-2">
                 <div class="flex items-center justify-between text-gray-600 text-sm pb-2 border-b px-4">
-                 
+
                     <div class="mt-6 w-full max-w-4xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-4">
-                        {% for post in posts %}
-                        {% for profile in profile %}
-                        <h1>{{ profile.username }}</h1>
-                        <img class="w-12 h-12 rounded-full" src="{{ profile.img.url }}" alt="">
-                        {%  endfor %}
+                        {% for posts in posts %}
                         <div class="bg-white p-3 shadow rounded-lg text-center">
-                            <img src="{{ post.image.url }}" alt="Post rasmi"
-                                class="w-full h-48 object-cover rounded-md">
+                            <img src="{{ post.img.url }}" alt="Post rasmi" class="w-full h-48 object-cover rounded-md" onerror="this.src='/static/no-image.png'">
+
                         </div>
-                        <form method="POST" action="{% url 'delete_post' post.id %}" class="mt-2">
-                            {% csrf_token %}
-                            <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">
-                                O'chirish
-                            </button>
-                        </form>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
+                    </div>  
 
                 </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-ellipsis text-[20px]"></i>
-                    <i class="fa-solid fa-xmark text-[20px]"></i>
-                </div>
-                <div class="flex items-center gap-2">
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                        alt="GitHub" class="w-8 h-8 ">
-                    <h3 class="text-sm"><span class="font-bold">GitHub</span> likes this</h3>
-                </div>
+
 
                 <div class="flex items-center justify-between  px-[14px] mt-2">
                     <div class="flex items-center space-x-3">

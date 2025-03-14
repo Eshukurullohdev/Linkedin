@@ -1,9 +1,8 @@
 from django.db import models
 
-class Post(models.Model):
-    image = models.ImageField(upload_to='posts/', null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    
+class PostImg(models.Model):
+    img = models.ImageField(upload_to='media/', null=True, blank=True)  # ✅ Rasmlar "media/posts/" ichiga tushadi
+    date = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
-        return f"Post {self.id} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+        return f"Post {self.id} - {self.date.strftime('%Y-%m-%d %H:%M')}"

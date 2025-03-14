@@ -1,24 +1,23 @@
-from django.shortcuts import render
-# from LinkedIn.forms import PostForm
-# from .models import Post
-# from Authentication.models import Profil
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import PostImg
+from .forms import PostForm
 
 def nav(request):
     return render(request, 'nav.html')
 
+# 📌 1️⃣ Asosiy sahifa – postlarni chiqarish va qo‘shish
 def home(request):
-    # profile = Profil.objects.all()
-    # if request.method == 'POST':
-    #     form = PostForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         form.save()
-    #         return redirect('home')
-        
-    # else:
-    #     form = PostForm()
-        
-    # posts = Post.objects.all().order_by('-created_at')
-    return render(request, 'home.html',)
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)  # Rasm yuklash uchun request.FILES kerak
+        if form.is_valid():
+            form.save()
+            return redirect('home')  # Post qo‘shilgach, sahifani qayta yuklash
+    else:
+        form = PostForm()
+
+    posts = PostImg.objects.order_by('-date')  # Eng yangi postlar birinchi chiqishi uchun
+    return render(request, 'home.html', {'form': form, 'posts': posts})
+
 
 
 # def delete_post(request, post_id):
