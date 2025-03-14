@@ -124,8 +124,13 @@
         <div class="space-y-2 mt-3">
             <div class="w-[555px] mx-auto bg-white  rounded-lg py-6 p-2">
                 <div class="flex items-center justify-between text-gray-600 text-sm pb-2 border-b px-4">
+                 
                     <div class="mt-6 w-full max-w-4xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-4">
                         {% for post in posts %}
+                        {% for profile in profile %}
+                        <h1>{{ profile.username }}</h1>
+                        <img class="w-12 h-12 rounded-full" src="{{ profile.img.url }}" alt="">
+                        {%  endfor %}
                         <div class="bg-white p-3 shadow rounded-lg text-center">
                             <img src="{{ post.image.url }}" alt="Post rasmi"
                                 class="w-full h-48 object-cover rounded-md">
