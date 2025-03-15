@@ -18,9 +18,9 @@ def home(request):
     posts = Post.objects.order_by('-created_at')  # Eng yangi postlar birinchi chiqishi uchun
     return render(request, 'home.html', {'form': form, 'posts': posts})
 
-# def delete_post(request, post_id):
-#     post = get_object_or_404(Post, id=post_id)  # Post mavjudligini tekshiramiz
-#     post.delete()
-#     return redirect('home') 
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)  # Post mavjudligini tekshiramiz
+    post.delete()
+    return redirect('home') 
 
 
