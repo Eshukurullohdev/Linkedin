@@ -1,8 +1,8 @@
 from django.db import models
 
-class PostImg(models.Model):
-    img = models.ImageField(upload_to='media/', null=True, blank=True)  # ✅ Rasmlar "media/posts/" ichiga tushadi
-    date = models.DateTimeField(auto_now_add=True)
+class Post(models.Model):
+    image = models.ImageField(upload_to='posts/')  # Rasm 'media/posts/' ichiga yuklanadi
+    created_at = models.DateTimeField(auto_now_add=True)  # Post qachon yaratilganini saqlaydi
 
     def __str__(self):
-        return f"Post {self.id} - {self.date.strftime('%Y-%m-%d %H:%M')}"
+        return f"Post {self.id}"
