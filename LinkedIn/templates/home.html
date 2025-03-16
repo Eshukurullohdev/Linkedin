@@ -66,7 +66,6 @@
 
 
     </div>
-
     <div class="">
         <div class="bg-white p-4 rounded-lg mb-[8px]">
             <div class="w-full flex gap-4">
@@ -127,17 +126,17 @@
                 <div class="mt-6 w-full max-w-4xl grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                     {% for post in posts %}
                     <div class="bg-white p-3 shadow rounded-lg flex flex-col items-center">
-                        <div class="absolute right-2 ">
-                            <i class="fa-solid fa-ellipsis-vertical cursor-pointer text-black hover:text-gray-700 transition-all duration-200 ease-in-out "
+                        <div class="absolute left-[63%] ">
+                            <i class="fa-solid text-[20px] fa-ellipsis-vertical cursor-pointer text-black hover:text-gray-700 transition-all duration-200 ease-in-out "
                                 onclick="toggleDelete({{ post.id }})"></i>
                         </div>
                         <form action="{% url 'delete_post' post.id %}" method="POST" id="delete-{{ post.id }}"
-                            class="absolute top-8 right-2 bg-red-600 text-white text-sm px-3 py-1 rounded-md shadow-lg hidden transition-all duration-200 ease-in-out">
+                            class="absolute  left-[58%] bottom-[53%] bg-red-600 text-white text-sm px-3 py-1 rounded-md shadow-lg hidden transition-all duration-200 ease-in-out">
                             {% csrf_token %}
                             <button type="submit" class="hover:bg-red-700 transition">🗑️ Delete</button>
                         </form>
                         <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
-                        x
+                        
                     </div>
 
                     {% endfor %}
