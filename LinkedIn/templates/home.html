@@ -119,9 +119,7 @@
                 <option>Recent</option>
             </select>
         </div>
-
         <div class="space-y-2 mt-3">
-
             <div class="flex items-center justify-between text-gray-600 text-sm pb-2 border-b px-4">
                 <div class="mt-6 w-full max-w-4xl grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                     {% for post in posts %}
@@ -136,18 +134,10 @@
                             <button type="submit" class="hover:bg-red-700 transition">🗑️ Delete</button>
                         </form>
                         <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
-                        
                     </div>
-
                     {% endfor %}
                 </div>
-
-
             </div>
-
-
-
-
             <div class="flex items-center justify-between  px-[14px] mt-2">
                 <div class="flex items-center space-x-3">
                     <img src="{% static 'img/vs_code_logo.jpeg' %}" alt="VS Code" class="w-12 h-12">
