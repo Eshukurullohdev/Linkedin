@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for profile in profil %}
+<div class="max-w-4xl container_fluid bg-white rounded-lg overflow-hidden mt-10">
+    <div class="relative">
+        <img src="{{ profile.profilBanner.url}}" alt="Cover" class="w-full h-40 object-cover">
+       <img style="border: 2px dashed #AEBFCE;" class="bg-[#E7E2DC] flex items-center justify-center text-[70px] text-[#788FA5] w-[128px] h-[128px] rounded-full absolute bottom-[-35px] left-[20px] object-cover "src="{{ profile.img.url }}" alt="">
+    </div>
+    <div class="p-6 mt-4">
+        <div class="flex items-center gap-3">
+            <h2 class="text-xl font-bold">{{  profile.fullname}}</h2>
+            <button class="flex items-center border border-dashed border-blue-500 text-blue-500 px-4 py-[2px] rounded-full hover:bg-blue-100 text-[12px]">
+                <i class="fa-solid fa-calendar-check mr-1"></i>
+            Add verification badge
+            </button>
+        </div>
+        <p class="text-black">IT Manager at IT House</p>
+        <p class="text-gray-500 text-[12px]">{{  profile.location}} <span class="text-[#0a66c2] text-[14px] hover:underline hover:cursor-pointer">Contact info</span></p>
+        <div class="mt-4 flex gap-2">
+            
+                <button class="bg-blue-600 text-white font-semibold py-1 px-4 rounded-full hover:bg-blue-700 transition">
+                    Open to
+                </button>
+                <button class="border border-blue-600 text-blue-600 font-semibold py-1 px-4 rounded-full hover:bg-blue-100 transition">
+                    Add profile section
+                </button>
+                <button class="border border-blue-600 text-blue-600 font-semibold py-1 px-4 rounded-full hover:bg-blue-100 transition">
+                    Enhance profile
+                </button>
+                <button class="border border-gray-400 text-gray-600 font-semibold py-1 px-4 rounded-full hover:bg-gray-100 transition">
+                    Resources
+                </button>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endfor %}
+
+{% endblock%}

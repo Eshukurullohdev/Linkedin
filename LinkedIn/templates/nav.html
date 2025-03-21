@@ -1,9 +1,12 @@
-<div class="sticky top-0 bg-white shadow-md w-full flex items-center justify-between">
+<div class="sticky top-0 z-50 bg-white shadow-md w-full flex items-center justify-between">
     <div class="container_fluid w-full p-1 mx-auto">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"
+                <a href="{% url 'home' %}">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"
                     class="w-10 h-10">
+                </a>
                 <div class="bg-gray-100 p-[7px] rounded-[5px] w-[300px] flex">
                     <div class="w-[48px] flex items-center justify-center"><i class="fa-solid fa-search text-[#888]"></i>
                     </div>
@@ -42,7 +45,7 @@
                       </svg>
                     <span class="text-xs">Notifications</span>
                 </a>
-                <a href="#" class="flex flex-col items-center hover:text-black">
+                <a href="{% url 'profile' %}" class="flex flex-col items-center hover:text-black">
                     <i class="fa-solid fa-user"></i>
                     <span class="text-xs">Me <i class="fa-solid fa-caret-down"></i></span>
                 </a>
