@@ -4,30 +4,29 @@
 {% block content %}
 <div class="container_fluid flex gap-6 mt-[20px]">
     <div class="w-[225px] h-[215px] bg-white rounded-lg">
-        {% for profil in profile %}
         <div class="flex flex-col items-center justify-center">
             <div class="w-full h-[57px] bg-gray-100">
                 <img class="w-[225px] h-[58px] rounded-t-lg"
-                    src="{{ profil.profilBanner.url}}" alt="">
+                    src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" alt="">
             </div>
             <div class="w-[225px] h-[180px] bg-white 
             rounded-b-lg  p-2 relative text-center z-1000">
-                <img  class="bg-[#E7E2DC] flex items-center justify-center text-[70px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute bottom-[140px] left-[20px] object-cover "src="{{ profil.img.url }}"  alt="">
-                <div class="w-[20px] h-[20px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[130px]  text-white">
-                    <i class=" fa-solid fa-plus"></i>
+                <i style="border: 2px dashed #AEBFCE;"
+                    class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] fa-solid fa-user "></i>
+                <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[138px]  text-white">
+                    <i class="fa-solid fa-plus"></i>
                 </div>
-               
                 <div class="mt-8 text-left">
-                    <h2 class="text-[20px] font-semibold !pt-4">{{ profil.fullname }}</h2>
-                    <p class="text-[12px] text-gray-500">{{ profil.location}} viloyati</p>
+                    <h2 class="text-[20px] font-semibold !pt-4">Shodiyorbek Qamb...</h2>
+                    <p class="text-[12px] text-gray-500">Poytug‘, Andijon viloyati</p>
                     <p class="text-[12px] text-gray-600 mt-2">IT Manager at IT House </p>
+
                 </div>
             </div>
         </div>
-        {% endfor %}
 
-        <div class="text-[12px]">
-                <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 flex  justify-between">
+        <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 flex  justify-between">
+            <div class="text-[12px]">
                 <span class="text-[#000] font-bold">Connections</span> <br>
                 <span class="text-gray-300 font-bold">Grow your network</span>
             </div>
@@ -41,7 +40,17 @@
                 <span class="text-gray-300 font-bold">Unlock Premium tools & insights</span>
             </div>
             <div class="flex gap-2 items-center mt-2">
-                <div class="w-[13px] h-[13px] bg-[#DE8A29] rounded-sm"></div>
+                <svg width="13" height="13" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="round-corner">
+                            <rect width="100" height="100" rx="20" ry="20" />
+                        </clipPath>
+                    </defs>
+                    <g clip-path="url(#round-corner)">
+                        <rect width="100" height="100" fill="#E3A24F" />
+                        <polygon points="0,0 100,0 100,100" fill="#F7D08A" />
+                    </g>
+                </svg>
                 <span class="text-[12px] font-bold hover:text-[#0562BC] cursor-pointer">Try Premium for $0</span>
             </div>
         </div>
@@ -67,41 +76,81 @@
 
 
     </div>
-    
+
+
     <div class="">
-        <div class="bg-white w-[555px] p-4 rounded-lg mb-[8px]">
-            <div class="w-full flex gap-4"> 
-                <div style="border: 4px dotted #C0CAD2;" class="w-[60px] h-[54px] rounded-full bg-[#E7E2DC] flex items-center justify-center ">
+        <div class="w-[555px] bg-white p-4 rounded-lg mb-[8px]">
+            <div class="w-full flex gap-4">
+                <div style="border: 4px dotted #C0CAD2;"
+                    class="w-[60px] h-[54px] rounded-full bg-[#E7E2DC] flex items-center justify-center ">
                     <i class="text-[25px] text-[#788FA5] fa-solid fa-user"></i>
                 </div>
                 <input type="text" placeholder="Start a post" class="w-full px-6 border border-[#b2b2b2] rounded-full">
             </div>
             <div class="flex justify-around mt-2 items-center">
-                <button class="flex gap-1 items-center"><i class="fa-brands fa-youtube text-[20px] text-[#5f9b41]"></i> Video</button>
+                <button class="flex gap-1 items-center"><i class="fa-brands fa-youtube text-[20px] text-[#5f9b41]"></i>
+                    Video</button>
 
                 <input type="checkbox" id="modal-toggle" class="hidden peer">
                 <label for="modal-toggle" class="flex gap-1 items-center hover:cursor-pointer">
                     <i class="fa-solid fa-image text-[18px] text-[#378fe9]"></i> Photo
                 </label>
+
                 <div class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:flex justify-center items-center">
                     <div class="bg-white p-6 rounded-lg shadow-lg w-80 relative">
-                        <label for="modal-toggle" class="absolute top-3 right-3 text-red-500 text-xl cursor-pointer">&times;</label>
+                        <label for="modal-toggle"
+                            class="absolute top-3 right-3 text-red-500 text-xl cursor-pointer">&times;</label>
                         <h2 class="text-lg font-semibold mb-4">Rasm tanlang</h2>
-                        
+
                         <form method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
                             {% csrf_token %}
-                            
-                            <label for="rasm_input" class="w-full h-40 border-2 border-dashed border-gray-400 flex flex-col justify-center items-center bg-gray-50 rounded-lg cursor-pointer hover:border-blue-500 transition">
-                                <span class="text-gray-600">Rasm yoki video tanlang</span>
-                                <input type="file" id="rasm_input" name="image" class="hidden" accept="image/*,video/mp4">
+
+                            <label for="rasm_input"
+                                class="w-full h-auto border-2 border-dashed border-gray-400 flex flex-col justify-center items-center bg-gray-50 rounded-lg cursor-pointer hover:border-blue-500 transition relative overflow-hidden">
+                                <span class="text-gray-600 h-40 flex items-center justify-center" id="label-text">Rasm
+                                    tanlang</span>
+                                <img id="preview" class="hidden rounded-lg">
+                                <input type="file" id="rasm_input" name="image" class="hidden" accept="image/*">
                             </label>
-            
-                            <button type="submit" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Postni yaratish</button>
+
+                            <input type="text" id="caption_input"
+                                class="hidden mt-3 w-full px-3 py-2 border border-gray-300 rounded"
+                                placeholder="Post uchun malumot kiriting">
+
+                            <button type="submit"
+                                class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Postni
+                                yaratish</button>
                         </form>
                     </div>
                 </div>
-                <button class="flex gap-1 items-center"><i class="fa-solid fa-newspaper text-[18px] text-[#e06847]"></i> Write article</button>
-            </div>            
+
+                <script>
+                    let input = document.getElementById("rasm_input");
+                    let preview = document.getElementById("preview");
+                    let labelText = document.getElementById("label-text");
+                    let captionInput = document.getElementById("caption_input");
+
+                    input.onchange = function () {
+                        let file = input.files[0];
+                        if (file && file.type.startsWith("image/")) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                preview.src = e.target.result;
+                                preview.classList.remove("hidden");
+                                labelText.style.display = "none";
+                                preview.style.width = "100%";
+                                preview.style.height = "100%";
+                                captionInput.classList.remove("hidden");
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    };
+                </script>
+
+
+                <button class="flex gap-1 items-center"><i class="fa-solid fa-newspaper text-[18px] text-[#e06847]"></i>
+                    Write article</button>
+            </div>
         </div>
 
         <div class="flex items-center justify-center">
@@ -113,7 +162,6 @@
             </select>
         </div>
 
-
         <div class="space-y-2 mt-3">
             {% for post in posts %}
             <div class="w-[555px] mx-auto bg-white  rounded-lg">
@@ -121,67 +169,73 @@
                     <div class="flex items-center gap-2">
                         <h3 class="text-sm text-[#666]">Suggested</h3>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <div class="absolute left-[63%] ">
+                    <div class="flex items-center gap-2 w-[80px]">
+                        <div class="absolute left-[62%] ">
                             <i class="fa-solid text-[20px] fa-ellipsis cursor-pointer text-black hover:text-gray-700 transition-all duration-200 ease-in-out "
                                 onclick="toggleDelete({{ post.id }})"></i>
                         </div>
-                        <i class="fa-solid fa-xmark text-[20px]"></i>
+                        <div class="flex flex-col items-center  mt-4">
+                            <div class="relative w-full h-auto">
+                                <form action="{% url 'delete_post' post.id %}" method="POST" id="delete-{{ post.id }}"
+                                    class="absolute bg-red-600 text-white text-sm px-4 py-1 rounded-md shadow-lg hidden transition-all duration-200 ease-in-out hover:bg-red-700 transition">
+                                    {% csrf_token %}
+                                    <button type="submit" class="w-[55px] flex items-center gap-1">🗑 Delete</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                {% for profil in profile %}
+
                 <div class="flex items-center justify-between  px-[14px] mt-2">
                     <div class="flex items-center space-x-3">
-                        <img src="{{ profil.img.url}}" alt="VS Code" class="w-12 h-12 rounded-full">
+                        <img src="{% static 'img/vs_code_logo.jpeg' %}" alt="VS Code" class="w-12 h-12">
                         <div>
-                            <h1 class="text-xl font-bold">{{ profil.fullname }}</h1>
+                            <h1 class="text-xl font-bold">Visual Studio Code</h1>
                             <p class="text-gray-600 text-sm">36,452 followers • 1w</p>
                         </div>
                     </div>
                     <button class="text-blue-500 font-semibold">+ Follow</button>
                 </div>
-                {% endfor %}
-                <p class="mt-2 text-gray-700 px-4">Introducing GitHub Copilot agent mode (preview): the next evolution in AI-assisted coding.</p>
-                
-                <div class="flex flex-col items-center  mt-4">
-                    <div class="w-full h-auto">
-                        <form action="{% url 'delete_post' post.id %}" method="POST" id="delete-{{ post.id }}"
-                            class="absolute  left-[58%] bottom-[53%] bg-red-600 text-white text-sm px-3 py-1 rounded-md shadow-lg hidden transition-all duration-200 ease-in-out">
-                            {% csrf_token %}
-                            <button type="submit" class="hover:bg-red-700 transition">🗑 Delete</button>
-                        </form>
-                        <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover ">
-                    </div>
-                </div>
-                
+
+                <p class="mt-2 text-gray-700 px-4">Introducing GitHub Copilot agent mode (preview): the next evolution
+                    in AI-assisted coding.</p>
+
+                <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
+
                 <div class="relative flex justify-between items-center mt-4 text-gray-600">
                     <div class="absolute w-full flex items-center justify-between px-4">
                         <div class="flex items-center">
-                            <span class="text-blue-500"><i class="fa-regular fa-thumbs-up"></i> <i class="fa-solid fa-heart text-red-500"></i> </span>
+                            <span class="text-blue-500"><i class="fa-regular fa-thumbs-up"></i> <i
+                                    class="fa-solid fa-heart text-red-500"></i> </span>
                             <span> 2,216</span>
                         </div>
                         <span class="flex items-center">41 comments • 139 reposts</span>
                     </div>
                 </div>
-                
+
+
                 <div class="flex justify-around mt-4 border-t pt-4">
-                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-regular fa-thumbs-up"></i> Like</button>
-                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-solid fa-comment-dots"></i> Comment</button>
-                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-solid fa-repeat"></i> Repost</button>
-                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-solid fa-paper-plane"></i> Send</button>
+                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-regular fa-thumbs-up"></i>
+                        Like</button>
+                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-solid fa-comment-dots"></i>
+                        Comment</button>
+                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-solid fa-repeat"></i>
+                        Repost</button>
+                    <button class="px-4 py-2 rounded-md hover:bg-gray-300"><i class="fa-solid fa-paper-plane"></i>
+                        Send</button>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
 
+
+
     <div class="">
         <div class="w-[300px] py-3  bg-white rounded-lg ">
             <h2 class="font-semibold text-[14px] mb-2 ml-4">Today's puzzle games</h2>
 
             <div class=" px-[26px]">
-                <a href="https://www.linkedin.com/games/zip/">
                 <div class="flex items-center justify-between py-1">
                     <div class="flex items-center gap-2">
                         <img src="{% static 'img/kok_oq_sariq.svg' %}" class="w-8 h-8" alt="">
@@ -192,7 +246,7 @@
                     </div>
                     <i class="fa-solid fa-chevron-right text-gray-400"></i>
                 </div>
-            </a>
+
                 <div class="flex items-center justify-between py-1">
                     <div class="flex items-center gap-2">
                         <img src="{% static 'img/mayda_katak.svg' %}" class="w-8 h-8" alt="">
@@ -235,6 +289,7 @@
                 <i class="fa-solid fa-circle-info text-gray-400 text-sm"></i>
             </div>
 
+
             <div class="flex items-center gap-3 mb-3">
                 <img src="{% static 'img/it_compania.jpeg' %}" class="w-12 h-12 rounded-full" alt="Profile">
                 <div class="flex-1">
@@ -272,12 +327,14 @@
         </div>
 
     </div>
+
 </div>
-</div>
+
 <script>
     function toggleDelete(postId) {
         let deleteButton = document.getElementById("delete-" + postId);
-        deleteButton.classList.toggle("hidden"); // Tugmani ko‘rsatish yoki yashirish
-    };
+        deleteButton.classList.toggle("hidden");
+    }
 </script>
+
 {% endblock %}
