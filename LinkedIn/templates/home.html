@@ -9,20 +9,20 @@
                 <img class="w-[225px] h-[58px] rounded-t-lg"
                     src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" alt="">
             </div>
+            {% for profile in profile %}
             <div class="w-[225px] h-[180px] bg-white 
             rounded-b-lg  p-2 relative text-center z-1000">
-                <i style="border: 2px dashed #AEBFCE;"
-                    class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] fa-solid fa-user "></i>
+                <img src="{{ profile.img.url }}" class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] " alt="">
                 <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[138px]  text-white">
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <div class="mt-8 text-left">
-                    <h2 class="text-[20px] font-semibold !pt-4">Shodiyorbek Qamb...</h2>
-                    <p class="text-[12px] text-gray-500">Poytug‘, Andijon viloyati</p>
+                    <h2  class="text-[20px] font-semibold !pt-4">{{ profile.fullname }}</h2>
+                    <p class="text-[12px] text-gray-500">{{ profile.location }}</p>
                     <p class="text-[12px] text-gray-600 mt-2">IT Manager at IT House </p>
-
                 </div>
             </div>
+            {% endfor %}
         </div>
 
         <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 flex  justify-between">
@@ -185,18 +185,18 @@
                         </div>
                     </div>
                 </div>
-
+                {% for profile in profile %}
                 <div class="flex items-center justify-between  px-[14px] mt-2">
                     <div class="flex items-center space-x-3">
-                        <img src="{% static 'img/vs_code_logo.jpeg' %}" alt="VS Code" class="w-12 h-12">
+                        <img src="{{ profile.img.url }}" alt="VS Code" class="w-12 h-12 rounded-full">
                         <div>
-                            <h1 class="text-xl font-bold">Visual Studio Code</h1>
+                            <h1 class="text-xl font-bold">{{ profile.fullname }}</h1>
                             <p class="text-gray-600 text-sm">36,452 followers • 1w</p>
                         </div>
                     </div>
                     <button class="text-blue-500 font-semibold">+ Follow</button>
                 </div>
-
+                {% endfor %}
                 <p class="mt-2 text-gray-700 px-4">Introducing GitHub Copilot agent mode (preview): the next evolution
                     in AI-assisted coding.</p>
 
