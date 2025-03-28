@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="flex items-center justify-center h-screen bg-[#4ea4d2]">
+    <div class="bg-white bg-opacity-30 p-8 pt-[60px] rounded-2xl w-96 h-[380px] text-center relative">
+        <div class="flex justify-center mb-4 absolute top-[-60px] left-1/2 transform -translate-x-1/2">
+            <div class="w-28 h-28 bg-[#1c7abd] bg-opacity-70 rounded-full flex items-center justify-center">
+                <img class="w-[100px] h-[100px]" src="{%  static 'img/person.png' %}" alt="">
+            </div>
+        </div>
+        <h2 class="text-2xl tracking-[2px] text-white mb-6">LOGIN</h2>
+        <form>
+            <div class="mb-4 relative">
+                <span class="absolute inset-y-0 left-3 flex items-center text-[#5bacdb]">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <input type="text" placeholder="Username" class="w-full pl-10 px-4 py-2 border focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-[#5bacdb]">
+            </div>
+            <div class="mb-4 relative">
+                <span class="absolute inset-y-0 left-3 flex items-center text-[#5bacdb]">
+                    <i class="fa-solid fa-lock"></i>
+                </span>
+                <input type="password" placeholder="Password" class="w-full pl-10 px-4 py-2 border focus:outline-none focus:ring-2 focus:ring-blue-500 focus:text-blue-700 placeholder-[#5bacdb]">
+            </div>
+            <div class="flex items-center mb-4">
+                <input type="checkbox" id="remember" class="mr-2 hover:cursor-pointer">
+                <label for="remember" class="text-white text-[12px] tracking-[1px]">Remember me</label>
+            </div>
+            <button class="bg-[#3989be] rounded-full text-white py-[6px] px-[65px] hover:bg-blue-500">LOGIN</button>
+        </form>
+        <p class="mt-4 text-[12px] text-[#e3f2f7]"><a href="#" class="hover:underline">Forgot Username / Password?</a></p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="ui-feed-profile-small" aria-hidden="true" role="none" data-supported-dps="48x48" width="48" height="48">
+  <path fill="#fff" d="M2 8h44v38H2z"/>
+  <path fill="#dde7f1" d="M46 8v38H2V8H0v40h48V8h-2z"/>
+  <path d="M48 2.55V8H0V2.55A2.58 2.58 0 012.61 0h42.77A2.593 2.593 0 0148 2.54z" fill="#9db3c8"/>
+  <circle cx="4" cy="4" r="2" fill="#fff"/>
+  <path fill="#f8c77e" d="M6 34h36v6H6z"/>
+  <path d="M41 30H7c-.55 0-1-.45-1-1s.45-1 1-1h34c.55 0 1 .45 1 1s-.45 1-1 1zM41 24H23c-.55 0-1-.45-1-1s.45-1 1-1h18c.55 0 1 .45 1 1s-.45 1-1 1zM41 18H23c-.55 0-1-.45-1-1s.45-1 1-1h18c.55 0 1 .45 1 1s-.45 1-1 1zM16.36 23.12A5.944 5.944 0 0018 19c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 1.6.63 3.04 1.64 4.12C9 22.38 10.5 22 12 22s3 .37 4.36 1.12z" fill="#56687a"/>
+  <path d="M12 25c1.72 0 3.26-.73 4.36-1.88C15 22.38 13.5 22 12 22s-3 .37-4.36 1.12A5.96 5.96 0 0012 25z" fill="#f8c77e"/>
+  <circle cx="12" cy="18" r="3" fill="#f8c77e"/>
+</svg>

@@ -22,6 +22,9 @@ def home(request):
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)  # Post mavjudligini tekshiramiz
     post.delete()
-    return redirect('home') 
+    return redirect('home')
+
+def login(request):
+    return render(request, 'login.html') 
 
 

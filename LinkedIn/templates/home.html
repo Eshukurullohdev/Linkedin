@@ -4,26 +4,27 @@
 {% block content %}
 <div class="container_fluid flex gap-6 mt-[20px]">
     <div class="w-[225px] h-[215px] bg-white rounded-lg">
-        <div class="flex flex-col items-center justify-center">
-            <div class="w-full h-[57px] bg-gray-100">
-                <img class="w-[225px] h-[58px] rounded-t-lg"
-                    src="https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq" alt="">
+        {% for profile in profile %}
+        <div class="flex flex-col h-auto items-center justify-center">
+            <div class="w-full h-[60px] bg-gray-100">
+                <img class="w-[225px] h-auto rounded-t-lg object-cover"
+                    src="{{ profile.profilBanner.url }}" alt="">
             </div>
-            {% for profile in profile %}
-            <div class="w-[225px] h-[180px] bg-white 
-            rounded-b-lg  p-2 relative text-center z-1000">
-                <img src="{{ profile.img.url }}" class="bg-[#E7E2DC] flex items-center justify-center text-[35px] text-[#788FA5] w-[68px] h-[68px] rounded-full absolute top-[-20px] left-[20px] " alt="">
-                <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[19px] right-[138px]  text-white">
-                    <i class="fa-solid fa-plus"></i>
+            <div class="w-[225px] h-auto bg-white 
+            rounded-b-lg  px-2 pt-2 relative text-center z-1000 pb-2 ">
+                <img class="flex items-center justify-center w-[68px] h-[68px] rounded-full absolute top-[-28px] left-[20px] border border-2z  border-white" src="{{ profile.img.url }}" alt="">
+                <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[20px] right-[132px]  text-white">
+                    <i class="fa-solid fa-plus text-[15px]"></i>
                 </div>
                 <div class="mt-8 text-left">
-                    <h2  class="text-[20px] font-semibold !pt-4">{{ profile.fullname }}</h2>
+                    <h2 class="text-[20px] font-semibold !pt-4">{{ profile.fullname }}</h2>
                     <p class="text-[12px] text-gray-500">{{ profile.location }}</p>
-                    <p class="text-[12px] text-gray-600 mt-2">IT Manager at IT House </p>
+                    <p class="text-[12px] text-blue-500 mt-2">{{ profile.bio }}</p>
+
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
 
         <div class="w-[225px]  rounded-lg bg-white mt-2 p-4 flex  justify-between">
             <div class="text-[12px]">
@@ -80,11 +81,13 @@
 
     <div class="">
         <div class="w-[555px] bg-white p-4 rounded-lg mb-[8px]">
+            {% for profile in profile %}
             <div class="w-full flex gap-4">
                 <div style="border: 4px dotted #C0CAD2;"
                     class="w-[60px] h-[54px] rounded-full bg-[#E7E2DC] flex items-center justify-center ">
                     <i class="text-[25px] text-[#788FA5] fa-solid fa-user"></i>
                 </div>
+                {% endfor %}
                 <input type="text" placeholder="Start a post" class="w-full px-6 border border-[#b2b2b2] rounded-full">
             </div>
             <div class="flex justify-around mt-2 items-center">
@@ -185,6 +188,7 @@
                         </div>
                     </div>
                 </div>
+
                 {% for profile in profile %}
                 <div class="flex items-center justify-between  px-[14px] mt-2">
                     <div class="flex items-center space-x-3">
@@ -197,6 +201,7 @@
                     <button class="text-blue-500 font-semibold">+ Follow</button>
                 </div>
                 {% endfor %}
+
                 <p class="mt-2 text-gray-700 px-4">Introducing GitHub Copilot agent mode (preview): the next evolution
                     in AI-assisted coding.</p>
 
@@ -338,3 +343,8 @@
 </script>
 
 {% endblock %}
+
+
+
+
+<!-- https://static.licdn.com/aero-v1/sc/h/55k1z8997gh8dwtihm11aajyq -->

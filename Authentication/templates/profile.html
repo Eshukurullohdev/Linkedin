@@ -3,39 +3,235 @@
 
 {% block content %}
 {% for profile in profil %}
-<div class="max-w-4xl container_fluid bg-white rounded-lg overflow-hidden mt-10">
-    <div class="relative">
-        <img src="{{ profile.profilBanner.url}}" alt="Cover" class="w-full h-40 object-cover">
-       <img style="border: 2px dashed #AEBFCE;" class="bg-[#E7E2DC] flex items-center justify-center text-[70px] text-[#788FA5] w-[128px] h-[128px] rounded-full absolute bottom-[-35px] left-[20px] object-cover "src="{{ profile.img.url }}" alt="">
-    </div>
-    <div class="p-6 mt-4">
-        <div class="flex items-center gap-3">
-            <h2 class="text-xl font-bold">{{  profile.fullname}}</h2>
-            <button class="flex items-center border border-dashed border-blue-500 text-blue-500 px-4 py-[2px] rounded-full hover:bg-blue-100 text-[12px]">
-                <i class="fa-solid fa-calendar-check mr-1"></i>
-            Add verification badge
-            </button>
-        </div>
-        <p class="text-black">IT Manager at IT House</p>
-        <p class="text-gray-500 text-[12px]">{{  profile.location}} <span class="text-[#0a66c2] text-[14px] hover:underline hover:cursor-pointer">Contact info</span></p>
-        <div class="mt-4 flex gap-2">
-            
-                <button class="bg-blue-600 text-white font-semibold py-1 px-4 rounded-full hover:bg-blue-700 transition">
-                    Open to
-                </button>
-                <button class="border border-blue-600 text-blue-600 font-semibold py-1 px-4 rounded-full hover:bg-blue-100 transition">
-                    Add profile section
-                </button>
-                <button class="border border-blue-600 text-blue-600 font-semibold py-1 px-4 rounded-full hover:bg-blue-100 transition">
-                    Enhance profile
-                </button>
-                <button class="border border-gray-400 text-gray-600 font-semibold py-1 px-4 rounded-full hover:bg-gray-100 transition">
-                    Resources
-                </button>
-        </div>
-    </div>
-</div>
 
+<div class="container_fluid w-[1128px] flex justify-between mt-10">
+    <div class="">
+        <div class="w-[804px] bg-white rounded-lg overflow-hidden ">
+            <div class="relative w-full">
+                <img src="{{ profile.profilBanner.url}}" alt="Cover" class="w-full h-[170px] object-cover">
+                <img style="border: 2px dashed #AEBFCE;"
+                    class="bg-[#E7E2DC] flex items-center justify-center text-[70px] text-[#788FA5] w-[128px] h-[128px] rounded-full absolute bottom-[-35px] left-[20px] object-cover "
+                    src="{{ profile.img.url }}" alt="">
+                <div class="w-full flex items-center justify-between text-left">
+                    <i
+                        class="fa-solid fa-pen text-[20px] w-[48px] h-[48px] flex items-center justify-center hover:bg-gray-200 rounded-full duration-300 absolute right-[5px] bottom-[-50px] z-1000"></i>
+                </div>
+            </div>
+
+            <div class="p-6 mt-4">
+                <div class="flex items-center gap-3">
+                    <h2 class="text-xl font-bold">{{ profile.fullname}}</h2>
+                    <button
+                        class="flex items-center border border-dashed border-blue-500 text-blue-500 px-4 py-[2px] rounded-full hover:bg-blue-100 text-[12px]">
+                        <i class="fa-solid fa-calendar-check mr-1"></i>
+                        Add verification badge
+                    </button>
+                </div>
+                <p class="text-black">IT Manager at IT House</p>
+                <p class="text-gray-500 text-[12px]">{{ profile.location}} <span
+                        class="text-[#0a66c2] text-[14px] hover:underline hover:cursor-pointer">Contact info</span></p>
+                <div class="mt-4 flex gap-2">
+
+                    <button
+                        class="bg-blue-600 text-white font-semibold py-1 px-4 rounded-full hover:bg-blue-700 transition">
+                        Open to
+                    </button>
+                    <button
+                        class="border border-blue-600 text-blue-600 font-semibold py-1 px-4 rounded-full hover:bg-blue-100 transition">
+                        Add profile section
+                    </button>
+                    <button
+                        class="border border-blue-600 text-blue-600 font-semibold py-1 px-4 rounded-full hover:bg-blue-100 transition">
+                        Enhance profile
+                    </button>
+                    <button
+                        class="border border-gray-400 text-gray-600 font-semibold py-1 px-4 rounded-full hover:bg-gray-100 transition">
+                        Resources
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg w-[804px] mt-[10px]">
+            <h2 class="text-lg font-semibold tracking-[0.5px]">Suggested for you</h2>
+            <p class="text-sm text-gray-500"><i class="fa-solid fa-eye"></i> Private to you</p>
+            <div class="mt-4 p-4 border rounded-md">
+                <h3 class="text-md font-semibold text-gray-800 flex items-center"><img class="mr-2"
+                        src="{% static 'img/royhat.svg' %}" alt=""> Write a summary to highlight your personality or
+                    work experience</h3>
+                <p class="text-sm text-gray-600 mt-2">Members who include a summary receive up to 3.9 times as many
+                    profile views.</p>
+                <button class="mt-4 rounded-full border border-black px-4 py-[2px]">Add a summary</button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg w-[804px] mt-[10px] ">
+            <div class=" px-6 pt-6 ">
+                <h2 class="text-lg font-semibold">Analytics</h2>
+                <p class="text-sm text-gray-500"><i class="fas fa-eye"></i> Private to you</p>
+                <div class="mt-4 p-4 flex">
+                    <div class="flex space-x-2 mr-4 w-[235px]">
+                        <i class="fas fa-user-friends text-lg"></i>
+                        <div>
+                            <p class="text-md font-semibold text-gray-800">0 profile views</p>
+                            <p class="text-sm text-gray-600">Update your profile to attract viewers.</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2 w-[235px]">
+                        <i class="fas fa-chart-bar text-lg"></i>
+                        <div>
+                            <p class="text-md font-semibold text-gray-800">0 post impressions</p>
+                            <p class="text-sm text-gray-600">Start a post to increase engagement.</p>
+                            <p class="text-xs text-gray-500">Past 7 days</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-4 border-t text-center hover:bg-gray-100 duration-300">
+                <button class="w-full py-2 font-semibold">Show all analytics →</button>
+            </div>
+        </div>
+
+        <!-- <div class="bg-white p-6 rounded-lg shadow-md w-[804px] mt-[10px]">
+            <div class="mt-6 p-4 border rounded-md">
+                <h2 class="text-lg font-semibold text-gray-700">Activity</h2>
+                <p class="text-blue-600 text-sm cursor-pointer">0 followers</p>
+                <p class="text-sm text-gray-600 mt-1">You haven't posted yet</p>
+                <p class="text-xs text-gray-500">Posts you share will be displayed here.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <button class="py-2 px-4 text-blue-600 font-semibold border rounded-md hover:bg-gray-100">Create a post</button>
+                    <p class="text-sm text-gray-600 cursor-pointer">Show all activity →</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="bg-white rounded-lg w-[804px] mt-[10px]">
+            <div class="px-6 pt-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800">Activity</h2>
+                        <p class="text-blue-500 text-sm">0 followers</p>
+                    </div>
+                    <div class="flex">
+                        <div class="flex items-center">
+                            <button
+                                class="border border-blue-500 text-blue-500 px-4 py-1 rounded-full hover:bg-blue-100 transition inline-block mr-3">
+                                Create a post
+                            </button>
+                        </div>
+                        <i
+                            class="fa-solid fa-pen text-[20px] w-[48px] h-[48px] flex items-center justify-center hover:bg-gray-200 rounded-full duration-300"></i>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-4 font-semibold">You haven’t posted yet</p>
+                <p class="text-gray-500 text-sm">Posts you share will be displayed here.</p>
+            </div>
+            <div class="mt-4 border-t text-center hover:bg-gray-100 duration-300">
+                <button class="w-full py-2  font-semibold">Show all analytics →</button>
+            </div>
+        </div>
+
+
+
+        <div class="w-[804px] mx-auto bg-white p-6 rounded-xl shadow-md mt-[10px]">
+            <h2 class="text-xl font-semibold mb-4">Experience</h2>
+
+            <div class="border-b pb-4 mb-4 flex">
+                <img class="mr-2 mt-1 w-[48px] h-[48px]" src="{% static 'img/royhat.svg' %}" alt="">
+                <div>
+                    <h3 class="text-lg font-medium">IT Manager</h3>
+                    <p class="text-gray-600">IT Company • Part-time</p>
+                    <p class="text-gray-500 text-sm">Sep 2009 - Present • 15 yrs 7 mos</p>
+                </div>
+            </div>
+
+            <div class="pb-4 mb-6 flex">
+                <img class="mr-2 mt-1 w-[48px] h-[48px]" src="{% static 'img/royhat.svg' %}" alt="">
+                <div>
+                    <h3 class="text-lg font-medium">Senior Web Developer</h3>
+                    <p class="text-gray-600">KMD • Part-time</p>
+                    <p class="text-gray-500 text-sm">Poytug‘, Andijon Region, Uzbekistan</p>
+                    <p class="text-gray-500 text-sm">Sep 2009 - Present • 15 yrs 7 mos</p>
+                </div>
+            </div>
+
+            <div class="w-full ml-14 mt-4 text-gray-700">
+                <p><span><i class="fa-solid fa-gem"></i></span> Python (Programming Language), Node.js and +3 skills</p>
+            </div>
+        </div>
+
+
+        <div class="max-w-[804px] mx-auto bg-white p-6 rounded-xl shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Experience</h2>
+            
+            <!-- IT Manager -->
+            <div class="border-b pb-4 mb-4">
+                <h3 class="text-lg font-medium">IT Manager</h3>
+                <p class="text-gray-600">IT Company • Part-time</p>
+                <p class="text-gray-500 text-sm">Sep 2009 - Present • 15 yrs 7 mos</p>
+            </div>
+            
+            <!-- Senior Web Developer -->
+            <div class="border-b pb-4 mb-4">
+                <h3 class="text-lg font-medium">Senior Web Developer</h3>
+                <p class="text-gray-600">KMD • Part-time</p>
+                <p class="text-gray-500 text-sm">Poytug‘, Andijon Region, Uzbekistan</p>
+                <p class="text-gray-500 text-sm">Sep 2009 - Present • 15 yrs 7 mos</p>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="mt-6">
+                <h2 class="text-xl font-semibold mb-4">Skills</h2>
+                
+                <div class="border-b pb-4 mb-4">
+                    <h3 class="text-lg font-medium">Python (Programming Language)</h3>
+                    <p class="text-gray-600 flex items-center">
+                        <img src="https://via.placeholder.com/24" class="w-6 h-6 mr-2" alt="KMD Logo"> Senior Web Developer at KMD
+                    </p>
+                </div>
+                
+                <div class="border-b pb-4 mb-4">
+                    <h3 class="text-lg font-medium">Node.js</h3>
+                    <p class="text-gray-600 flex items-center">
+                        <img src="https://via.placeholder.com/24" class="w-6 h-6 mr-2" alt="KMD Logo"> Senior Web Developer at KMD
+                    </p>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button class="text-blue-600 font-medium hover:underline">Show all 5 skills →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="">
+        <div class="bg-white rounded-lg p-6 w-[300px]">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">Profile language</h2>
+                <button class="text-gray-500 hover:text-gray-700">
+                    ✏️
+                </button>
+            </div>
+            <p class="text-gray-700 mb-4">English</p>
+            <hr class="my-4 border-gray-300">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Public profile & URL</h2>
+                <button class="text-gray-500 hover:text-gray-700">
+                    ✏️
+                </button>
+            </div>
+            <a href="https://www.linkedin.com/in/shodiyorbek-qambaraliyev-00b99a354/"
+                class="break-words text-[#666666]">
+                www.linkedin.com/in/jumashbek-mutalov-131b54357
+            </a>
+        </div>
+    </div>
+
+
+</div>
 
 {% endfor %}
 
