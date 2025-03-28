@@ -15,7 +15,7 @@
             </div>
 
             <div class="flex space-x-6 items-center text-gray-600">
-                <a href="#" class="flex flex-col items-center hover:text-black">
+                <a href="{% url 'home' %}" class="flex flex-col items-center hover:text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
                         <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 5 3.18V2h3v5.09z"></path>
                       </svg>
@@ -52,12 +52,7 @@
                 <div class="w-[1px] h-[50px] bg-gray-300">
 
                 </div>
-                <a href="#" class="flex flex-col items-center hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
-                        <path d="M3 3h4v4H3zm7 4h4V3h-4zm7-4v4h4V3zM3 14h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4zM3 21h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4z"></path>
-                      </svg>
-                    <span class="text-xs">For Business <i class="fa-solid fa-caret-down"></i></span>
-                </a>
+              
                 <a href="#" class="flex flex-col items-center hover:text-black ">
                     <svg width="18" height="18" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -71,6 +66,11 @@
                         </g>
                     </svg>
                     <span class="text-xs">Try Premium for $0</span>
+                </a>
+
+                <a href="{% url 'login' %}" class="flex flex-col items-center hover:text-black">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="text-[12px]">Login</span>
                 </a>
             </div>
         </div>
