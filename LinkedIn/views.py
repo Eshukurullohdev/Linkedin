@@ -25,6 +25,7 @@ def delete_post(request, post_id):
     return redirect('home')
 
 def login(request):
+    
     return render(request, 'login.html') 
 
 
