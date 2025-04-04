@@ -93,48 +93,198 @@
             </div>
         </div>
 
-        <!-- <div class="bg-white p-6 rounded-lg shadow-md w-[804px] mt-[10px]">
-            <div class="mt-6 p-4 border rounded-md">
-                <h2 class="text-lg font-semibold text-gray-700">Activity</h2>
-                <p class="text-blue-600 text-sm cursor-pointer">0 followers</p>
-                <p class="text-sm text-gray-600 mt-1">You haven't posted yet</p>
-                <p class="text-xs text-gray-500">Posts you share will be displayed here.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <button class="py-2 px-4 text-blue-600 font-semibold border rounded-md hover:bg-gray-100">Create a post</button>
-                    <p class="text-sm text-gray-600 cursor-pointer">Show all activity →</p>
-                </div>
-            </div>
-        </div> -->
 
         <div class="bg-white rounded-lg w-[804px] mt-[10px]">
-            <div class="px-6 pt-6">
-                <div class="flex justify-between items-center">
+            <div class="pt-6 px-4">
+                <div class="flex px-6 justify-between items-center">
                     <div>
                         <h2 class="text-lg font-semibold text-gray-800">Activity</h2>
-                        <p class="text-blue-500 text-sm">0 followers</p>
+                        <p class="text-gray-500 text-sm">0 followers</p>
                     </div>
-                    <div class="flex">
-                        <div class="flex items-center">
-                            <button
-                                class="border border-blue-500 text-blue-500 px-4 py-1 rounded-full hover:bg-blue-100 transition inline-block mr-3">
-                                Create a post
-                            </button>
-                        </div>
-                        <i
-                            class="fa-solid fa-pen text-[20px] w-[48px] h-[48px] flex items-center justify-center hover:bg-gray-200 rounded-full duration-300"></i>
+                    <div class="flex items-center">
+                        <button class="border border-blue-500 text-blue-500 px-4 py-1 rounded-full hover:bg-blue-100 transition inline-block mr-3">Create a post</button>
+                        <i class="fa-solid fa-pen text-[20px] w-[48px] h-[48px] flex items-center justify-center hover:bg-gray-200 rounded-full duration-300"></i>
                     </div>
                 </div>
-                <p class="text-gray-600 mt-4 font-semibold">You haven’t posted yet</p>
-                <p class="text-gray-500 text-sm">Posts you share will be displayed here.</p>
+                <div class="mt-4 px-6">
+                    <button class="bg-green-100 text-green-700 px-4 py-1 rounded-full mr-2">Posts</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-1 rounded-full">Images</button>
+                </div>
+
+                <swiper-container class="mySwiper mt-[20px] w-[777px] flex" slides-per-view="2" centered-slides="true" navigation="true">
+                    <swiper-slide>
+                        <div class="absolute z-[-100] bg-white rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-[15px] mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
+                            <div class="flex items-center p-4 border-b">
+                                <img src="{% static 'img/achkili_chol.jpeg' %}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                                <div>
+                                    <p class="font-semibold">Shodiyorbek Qambaraliyev</p>
+                                    <p class="text-gray-500 text-sm">IT Manager at IT House</p>
+                                    <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
+                                </div>
+                            </div>
+                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{% static "img/pexels-pixabay-158063.jpg" %}');"></div>
+                            <div class="flex justify-between text-gray-500 p-4">
+                                <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>                                
+                                <i class="fa-regular fa-comment cursor-pointer hover:text-green-500"></i>
+                                <i class="fa-solid fa-retweet cursor-pointer hover:text-red-500"></i>
+                                <i class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 " ></i>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+                
+                <script>
+                    const swiperEl = document.querySelector('swiper-container');
+                    const swiper = swiperEl.swiper;
+                </script>
+
             </div>
             <div class="mt-4 border-t text-center hover:bg-gray-100 duration-300">
-                <button class="w-full py-2  font-semibold">Show all analytics →</button>
+                <button class="w-full py-2 font-semibold">Show all analytics →</button>
             </div>
-        </div>
+        </div>    
 
-
-
-        <div class="w-[804px] mx-auto bg-white p-6 rounded-xl shadow-md mt-[10px]">
+        <div class="w-[804px] bg-white p-6 rounded-xl mt-[10px]">
             <h2 class="text-xl font-semibold mb-4">Experience</h2>
 
             <div class="border-b pb-4 mb-4 flex">
@@ -162,47 +312,32 @@
         </div>
 
 
-        <div class="max-w-[804px] mx-auto bg-white p-6 rounded-xl shadow-md">
-            <h2 class="text-xl font-semibold mb-4">Experience</h2>
-            
-            <!-- IT Manager -->
-            <div class="border-b pb-4 mb-4">
-                <h3 class="text-lg font-medium">IT Manager</h3>
-                <p class="text-gray-600">IT Company • Part-time</p>
-                <p class="text-gray-500 text-sm">Sep 2009 - Present • 15 yrs 7 mos</p>
+        <div class="w-[804px] bg-white rounded-xl mt-[10px]">
+            <div class="pt-6 px-6">
+                <div class="flex justify-between items-center pb-2">
+                    <h2 class="text-lg font-semibold">Skills</h2>
+                    <div class="flex space-x-2">
+                        <button class="text-[30px] text-gray-500 hover:text-gray-700">+</button>
+                        <button class="text-[24px] text-gray-500 hover:text-gray-700">✎</button>
+                    </div>
+                </div>
+                <div class="mt-4 space-y-3 ">
+                    <p class="font-medium border-b pb-4">Full-Stack Development</p>
+                    <div>
+                        <p class="font-medium">Python (Programming Language)</p>
+                        <div class="flex items-center space-x-2 text-gray-600 text-sm">
+                            <img src="{% static 'img/it_compania.jpeg' %}" alt="KMD" class="w-[24px] h-[24px]">
+                            <span>Senior Web Developer at KMD</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Senior Web Developer -->
-            <div class="border-b pb-4 mb-4">
-                <h3 class="text-lg font-medium">Senior Web Developer</h3>
-                <p class="text-gray-600">KMD • Part-time</p>
-                <p class="text-gray-500 text-sm">Poytug‘, Andijon Region, Uzbekistan</p>
-                <p class="text-gray-500 text-sm">Sep 2009 - Present • 15 yrs 7 mos</p>
-            </div>
-            
-            <!-- Skills Section -->
-            <div class="mt-6">
-                <h2 class="text-xl font-semibold mb-4">Skills</h2>
-                
-                <div class="border-b pb-4 mb-4">
-                    <h3 class="text-lg font-medium">Python (Programming Language)</h3>
-                    <p class="text-gray-600 flex items-center">
-                        <img src="https://via.placeholder.com/24" class="w-6 h-6 mr-2" alt="KMD Logo"> Senior Web Developer at KMD
-                    </p>
-                </div>
-                
-                <div class="border-b pb-4 mb-4">
-                    <h3 class="text-lg font-medium">Node.js</h3>
-                    <p class="text-gray-600 flex items-center">
-                        <img src="https://via.placeholder.com/24" class="w-6 h-6 mr-2" alt="KMD Logo"> Senior Web Developer at KMD
-                    </p>
-                </div>
-                
-                <div class="text-center mt-4">
-                    <button class="text-blue-600 font-medium hover:underline">Show all 5 skills →</button>
-                </div>
+            <div class="mt-4 border-t text-center hover:bg-gray-100 duration-300">
+                <button class="w-full py-2 font-semibold">Show all analytics →</button>
             </div>
         </div>
+
+
     </div>
 
 
@@ -230,9 +365,13 @@
         </div>
     </div>
 
+    
+
 
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 {% endfor %}
 
 {% endblock%}

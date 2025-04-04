@@ -4,6 +4,7 @@ from .forms import PostForm
 from Authentication.models import Profil
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib import messages
+
 def nav(request):
     return render(request, 'nav.html')
 
@@ -27,19 +28,18 @@ def delete_post(request, post_id):
     return redirect('home')
 
 def login(request):
-    
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-        
+
         user = authenticate(request, username=username, password=password)
-        
+
         if user is not None:
             auth_login(request, user)
-            messages.success(request, "Siz tizimga kirdingiz.")
+            messages.success(request, 'Siz tizimga kirdingiz')
             return redirect('home')
         else:
-            messages.error(request, "Foydalanuvchi nomi yoki parol xato.")
+            messages.error(request, 'Login yoki parol xato')
             return redirect('login')
     return render(request, 'login.html') 
 
