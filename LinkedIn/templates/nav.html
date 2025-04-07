@@ -66,10 +66,17 @@
                     </svg>
                     <span class="text-xs mt-1">Try Premium for $0</span>
                 </a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="flex flex-col items-center mt-1 hover:text-black ">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="text-xs">logout</span>
+                </a>
+                {% else %}
                 <a href="{% url 'login' %}" class="flex flex-col items-center mt-1 hover:text-black ">
                     <i class="fa-solid fa-user text-[19px]"></i>
                     <span class="text-xs">Login</span>
                 </a>
+                {% endif %}
             </div>
         </div>
     </div>

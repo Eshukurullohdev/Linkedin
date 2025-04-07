@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post
 from .forms import PostForm
 from Authentication.models import Profil
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
 
 def nav(request):
@@ -44,3 +44,7 @@ def login(request):
     return render(request, 'login.html') 
 
 
+
+def logout(request):
+    auth_logout(request)
+    return render(request, 'logout.html')

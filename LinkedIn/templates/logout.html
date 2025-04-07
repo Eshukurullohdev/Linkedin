@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+    <div class="flex items-center flex-col justify-center h-screen bg-[#4ea4d2]">
+        <h1 class="text-2xl font-semibold text-gray-800">You have successfully logged out.</h1>
+
+        <a class=" cursor-pointer mt-6  px-12 py-2 inline-block bg-green-700 flex items-center justify-center gap-2 text-white font-semibold rounded-lg" href="{% url 'login' %}"> 
+        <i class="fa-solid fa-user"></i>
+            Login
+        </a>
+    </div>
+{% endblock %}
