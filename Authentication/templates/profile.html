@@ -117,13 +117,12 @@
                 <swiper-container class="mySwiper mt-6" slides-per-view="2" centered-slides="true" navigation="true">
 
                     <swiper-slide>
-                    
+
                         <div class="absolute z-[-100] bg-white rounded-lg overflow-hidden w-[365px] border">
                             <div class="flex items-center p-4 border-b">
-                           
-                                <img src="{{  profil.img.url}}" class="w-10 h-10 rounded-full mr-3"
-                                    alt="Profile">
-                            
+
+                                <img src="{{  profil.img.url}}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+
                                 <div>
                                     <p class="font-semibold">{{profil.fullname}}</p>
                                     <p class="text-gray-500 text-sm">{{profil.location}}</p>
@@ -131,9 +130,7 @@
                                 </div>
                             </div>
                             {% for post in post %}
-                            <div class="w-full h-[300px] bg-cover bg-center" style="background-image: url('{{ post.image.url }}');">
-                            
-                            </div>
+                            <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
                             {% endfor %}
                             <div class="flex justify-between text-gray-500 p-4">
                                 <i class="fa-regular fa-thumbs-up cursor-pointer hover:text-red-500"></i>
@@ -143,14 +140,14 @@
                                     class="w-[16px] h-[16px] fa-regular fa-share-from-square cursor-pointer hover:text-red-500 "></i>
                             </div>
                         </div>
-                
+
                     </swiper-slide>
 
-                 
 
-                
 
-               
+
+
+
                     <swiper-slide>
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
                             <div class="flex items-center p-4 border-b">
