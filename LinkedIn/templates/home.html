@@ -2,17 +2,27 @@
 
 {% load static %}
 {% block content %}
-<div class="container_fluid flex gap-6 mt-[20px]">
+<div class="container_fluid flex gap-6 mt-[20px] relative">
+  
+        {% if messages %}
+        {% for message in messages %}
+        <div id="flash-message" class="fixed left-[50%] translate-x-[-50%] top-[53px]  bg-green-600 text-white rounded-lg p-2 z-50">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+  
+
     <div class="w-[225px] h-[215px] bg-white rounded-lg">
         {% for profile in profile %}
         <div class="flex flex-col h-auto items-center justify-center">
             <div class="w-full h-[60px] bg-gray-100">
-                <img class="w-[225px] h-auto rounded-t-lg object-cover"
-                    src="{{ profile.profilBanner.url }}" alt="">
+                <img class="w-[225px] h-auto rounded-t-lg object-cover" src="{{ profile.profilBanner.url }}" alt="">
             </div>
             <div class="w-[225px] h-auto bg-white 
             rounded-b-lg  px-2 pt-2 relative text-center z-1000 pb-2 ">
-                <img class="flex items-center justify-center w-[68px] h-[68px] rounded-full absolute top-[-28px] left-[20px] border border-2z  border-white" src="{{ profile.img.url }}" alt="">
+                <img class="flex items-center justify-center w-[68px] h-[68px] rounded-full absolute top-[-28px] left-[20px] border border-2z  border-white"
+                    src="{{ profile.img.url }}" alt="">
                 <div class="w-[24px] h-[24px] bg-[#0A66C2] rounded-full absolute top-[20px] right-[132px]  text-white">
                     <i class="fa-solid fa-plus text-[15px]"></i>
                 </div>
@@ -336,6 +346,11 @@
 </div>
 
 <script>
+    setTimeout(function () {
+        let msg = document.getElementById("flash-message");
+        msg.classList.add("opacity-0");
+        setTimeout(() => msg.remove(), 500)
+    }, 3000);
     function toggleDelete(postId) {
         let deleteButton = document.getElementById("delete-" + postId);
         deleteButton.classList.toggle("hidden");
