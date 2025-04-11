@@ -3,15 +3,16 @@
 {% load static %}
 {% block content %}
 <div class="container_fluid flex gap-6 mt-[20px] relative">
-  
-        {% if messages %}
-        {% for message in messages %}
-        <div id="flash-message" class="fixed left-[50%] translate-x-[-50%] top-[53px]  bg-green-600 text-white rounded-lg p-2 z-50">
-            {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-  
+
+    {% if messages %}
+    {% for message in messages %}
+    <div id="flash-message"
+        class="fixed left-[50%] translate-x-[-50%] top-[53px]  bg-green-600 text-white rounded-lg p-2 z-50">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
 
     <div class="w-[225px] h-[215px] bg-white rounded-lg">
         {% for profile in profile %}
@@ -126,6 +127,9 @@
                                 <input type="file" id="rasm_input" name="image" class="hidden" accept="image/*">
                             </label>
 
+                            <input type="text" name="text" placeholder="Post haqida yozing..."
+                                class="w-full border p-2 rounded mb-3">
+
                             <input type="text" id="caption_input"
                                 class="hidden mt-3 w-full px-3 py-2 border border-gray-300 rounded"
                                 placeholder="Post uchun malumot kiriting">
@@ -203,6 +207,7 @@
                 <div class="flex items-center justify-between  px-[14px] mt-2">
                     <div class="flex items-center space-x-3">
                         <img src="{{ profile.img.url }}" alt="VS Code" class="w-12 h-12 rounded-full">
+
                         <div>
                             <h1 class="text-xl font-bold">{{ profile.fullname }}</h1>
                             <p class="text-gray-600 text-sm">36,452 followers • 1w</p>
@@ -212,8 +217,9 @@
                 </div>
                 {% endfor %}
 
-                <p class="mt-2 text-gray-700 px-4">Introducing GitHub Copilot agent mode (preview): the next evolution
-                    in AI-assisted coding.</p>
+                {% if post.text %}
+                <p class="mt-2 text-gray-700 text-sm">{{ post.text }}</p>
+                {% endif %}
 
                 <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
 
