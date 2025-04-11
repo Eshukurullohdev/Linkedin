@@ -128,7 +128,7 @@
                             </label>
 
                             <input type="text" name="text" placeholder="Post haqida yozing..."
-                                class="w-full border p-2 rounded mb-3">
+                                class="w-full border p-2 rounded mb-3 mt-4 outline-none">
 
                             <input type="text" id="caption_input"
                                 class="hidden mt-3 w-full px-3 py-2 border border-gray-300 rounded"
@@ -206,7 +206,7 @@
                 {% for profile in profile %}
                 <div class="flex items-center justify-between  px-[14px] mt-2">
                     <div class="flex items-center space-x-3">
-                        <img src="{{ profile.img.url }}" alt="VS Code" class="w-12 h-12 rounded-full">
+                        <img src="{{ profile.img.url }}" alt="VS Code" class="w-12 h-12 rounded-full ">
 
                         <div>
                             <h1 class="text-xl font-bold">{{ profile.fullname }}</h1>
@@ -215,13 +215,13 @@
                     </div>
                     <button class="text-blue-500 font-semibold">+ Follow</button>
                 </div>
+                
+                                {% if post.text %}
+                                <p class="mt-2 text-gray-700 text-sm">{{ post.text }}</p>
+                                {% endif %}
                 {% endfor %}
 
-                {% if post.text %}
-                <p class="mt-2 text-gray-700 text-sm">{{ post.text }}</p>
-                {% endif %}
-
-                <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
+                <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md mt-4">
 
                 <div class="relative flex justify-between items-center mt-4 text-gray-600">
                     <div class="absolute w-full flex items-center justify-between px-4">
