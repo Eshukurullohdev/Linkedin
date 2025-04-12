@@ -102,8 +102,10 @@
                 <input type="text" placeholder="Start a post" class="w-full px-6 border border-[#b2b2b2] rounded-full">
             </div>
             <div class="flex justify-around mt-2 items-center">
-                <button class="flex gap-1 items-center"><i class="fa-brands fa-youtube text-[20px] text-[#5f9b41]"></i>
-                    Video</button>
+                <input type="checkbox" id="modal-toggle" class="hidden peer">
+                <label for="modal-toggle" class="flex gap-1 items-center hover:cursor-pointer">
+                    <i class="fa-brands fa-youtube text-[18px] text-[#378fe9]"></i> Video
+                </label>
 
                 <input type="checkbox" id="modal-toggle" class="hidden peer">
                 <label for="modal-toggle" class="flex gap-1 items-center hover:cursor-pointer">
@@ -137,6 +139,7 @@
                                 yaratish</button>
                         </form>
                     </div>
+                   
                 </div>
 
                 <script>
@@ -220,7 +223,7 @@
                 
                 {% endfor %}
 
-                <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md mt-4">
+                <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-auto object-cover rounded-md mt-4">
 
                 <div class="relative flex justify-between items-center mt-4 text-gray-600">
                     <div class="absolute w-full flex items-center justify-between px-4">

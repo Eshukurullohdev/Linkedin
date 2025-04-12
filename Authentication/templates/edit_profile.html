@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto bg-white p-10 mt-12 shadow-xl rounded-2xl border border-gray-200 ">
+  <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Edit Profile</h2>
+  
+  <form method="post" enctype="multipart/form-data" class="">
+    {% csrf_token %}
+    <div class="space-y-4">
+      {{ form.as_p }}
+    </div>
+
+    <div class="pt-6 flex justify-between items-center">
+      <button type="submit" class="bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium px-6 py-3 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-600 transition duration-300">
+        💾 Save Changes
+      </button>
+      <a href="{% url 'profile' %}" class="text-gray-500 hover:text-gray-800 transition duration-200">
+        ✖ Cancel
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

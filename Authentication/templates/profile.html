@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-{% for profil in profil %}
+{% for profile in profil %}
 
 <div class="container_fluid w-[1128px] flex justify-between mt-10">
     <div class="">
@@ -13,8 +13,10 @@
                     class="bg-[#E7E2DC] flex items-center justify-center text-[70px] text-[#788FA5] w-[128px] h-[128px] rounded-full absolute bottom-[-35px] left-[20px] object-cover "
                     src="{{ profile.img.url }}" alt="">
                 <div class="w-full flex items-center justify-between text-left">
-                    <i
-                        class="fa-solid fa-pen text-[20px] w-[48px] h-[48px] flex items-center justify-center hover:bg-gray-200 rounded-full duration-300 absolute right-[5px] bottom-[-50px] z-1000"></i>
+                    <a href="{% url 'edit_profile' profile.id %}" class="absolute right-[5px] bottom-[-50px] z-1000">
+                        <i class="fa-solid fa-pen text-[20px] w-[48px] h-[48px] flex items-center justify-center hover:bg-gray-200 rounded-full duration-300"></i>
+                      </a>
+                      
                 </div>
             </div>
 
@@ -30,6 +32,7 @@
                 <p class="text-black">IT Manager at IT House</p>
                 <p class="text-gray-500 text-[12px]">{{ profile.location}} <span
                         class="text-[#0a66c2] text-[14px] hover:underline hover:cursor-pointer">Contact info</span></p>
+                <p>{{ profile.bio}}</p>
                 <div class="mt-4 flex gap-2">
 
                     <button
@@ -117,18 +120,18 @@
                 <swiper-container class="mySwiper mt-6" slides-per-view="2" centered-slides="true" navigation="true">
 
                     <swiper-slide>
-
+                        {% for profil in profil %}
                         <div class="absolute z-[-100] bg-white rounded-lg overflow-hidden w-[365px] border">
                             <div class="flex items-center p-4 border-b">
 
                                 <img src="{{  profil.img.url}}" class="w-10 h-10 rounded-full mr-3" alt="Profile">
-
                                 <div>
                                     <p class="font-semibold">{{profil.fullname}}</p>
                                     <p class="text-gray-500 text-sm">{{profil.location}}</p>
                                     <p class="text-gray-400 text-xs">now • <i class="fa-solid fa-earth-asia"></i></p>
                                 </div>
                             </div>
+                            {% endfor %}
                             {% for post in post %}
                             <img src="{{ post.image.url }}" alt="Post rasmi" class="w-full h-54 object-cover rounded-md">
                             {% endfor %}
@@ -142,12 +145,6 @@
                         </div>
 
                     </swiper-slide>
-
-
-
-
-
-
                     <swiper-slide>
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[365px] border">
                             <div class="flex items-center p-4 border-b">
