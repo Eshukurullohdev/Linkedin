@@ -12,6 +12,7 @@ def profil(request):
 
 
 
+
 def edit_profile(request, pk):
     profile = get_object_or_404(Profil, pk=pk)
     if request.method == 'POST':

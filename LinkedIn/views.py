@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post
 from .forms import PostForm
 from Authentication.models import Profil
-
 from django.contrib import messages
 
 def nav(request):
