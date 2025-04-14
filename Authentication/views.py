@@ -22,7 +22,7 @@ def edit_profile(request, pk):
             return redirect('profile')
     else:
         form = ProfileEditForm(instance=profile)
-    return render(request, 'edit_profile.html', {'form': form})
+    return render(request, 'edit_profile.html', {'form': form}) 
 
 def login(request):
     if request.method == "POST":
