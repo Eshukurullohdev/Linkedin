@@ -1,0 +1,36 @@
+views uchun yoziladi.
+def edit_profile(request, pk):
+#     profile = get_object_or_404(Profil, pk=pk)
+#     if request.method == 'POST':
+#         form = ProfileEditForm(request.POST, request.FILES, instance=profile)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('profile')
+#     else:
+#         form = ProfileEditForm(instance=profile)
+#     return render(request, 'edit_profile.html', {'form': form}) 
+
+
+
+urls uchun yoziladi
+
+path('profile/edit/<int:pk>/', edit_profile, name='edit_profile'),
+
+
+
+forms uchun yoziladi
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Profil
+        fields = [ 'fullname', 'img', 'location', 'bio', 'profilBanner']
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.update({
+                'class': 'mt-1 block w-full border border-gray-rounded-md shadow-sm focus:ring-blue-focus:border-blue-500'
+            })
+
+
+
+

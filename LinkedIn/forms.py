@@ -7,12 +7,14 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['image', 'text']
         
-        
+
 
 class ProfileEditForm(forms.ModelForm):
+    
     class Meta:
         model = Profil
-        fields = [ 'fullname', 'img', 'location', 'bio', 'profilBanner']
+        fields = ['img', 'fullname', 'location', 'bio', 'profilBanner', 'ish']
+        
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -20,3 +22,7 @@ class ProfileEditForm(forms.ModelForm):
             field.widget.attrs.update({
                 'class': 'mt-1 block w-full border border-gray-rounded-md shadow-sm focus:ring-blue-focus:border-blue-500'
             })
+        
+    
+        
+
