@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <div class="max-w-2xl mx-auto bg-white p-8 mt-10 shadow-md rounded-lg">
   <h2 class="text-2xl font-semibold text-gray-800 mb-6">Edit Profile</h2>
-   <form method="post" enctype="multipart/form-data">
-    {%  csrf_token %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
     {{ form.as_p }}
     <div class="p-4">
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Save Changes <i class="fa-solid fa-floppy-disk ml-2"></i></button>
-        <a href="{% url 'profile' %}" class="ml-4 text-gray-600 hover:text-gray-800">Cansel</a>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Save
+        Changes <i class="fa-solid fa-floppy-disk ml-2"></i></button>
+      <a href="{% url 'profile' %}" class="ml-4 text-gray-600 hover:text-gray-800">Cansel</a>
     </div>
-   </form>
+  </form>
 </div>
 {% endblock %}
