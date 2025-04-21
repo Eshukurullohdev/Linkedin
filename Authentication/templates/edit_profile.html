@@ -13,17 +13,5 @@
   </form>
 </div>
 
-<form id="photo-form" method="POST" enctype="multipart/form-data" action="{% url 'update_photo' %}">
-  {% csrf_token %}
-  <img id="user-photo" src="{{ request.user.userprofile.photo.url }}" alt="Profil rasmi" width="150" height="150" style="border-radius: 50%; object-fit: cover;">
-  <label for="photo-input" style="font-size: 36px; cursor: pointer;">➕</label>
-  <input type="file" id="photo-input" name="photo" accept="image/*" style="display: none;">
-</form>
-
-<script>
-  document.getElementById('photo-input').addEventListener('change', function () {
-    document.getElementById('photo-form').submit();
-  });
-</script>
 
 {% endblock %}
