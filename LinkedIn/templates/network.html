@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container_fluid flex  gap-4 mt-4 bg-[#F4F2EE]">
+    <div class="w-[383px] h-[480px] bg-red-500">
+        <h1>left</h1>
+    </div>
+    <div>
+        <div class="w-[780px] h-[52px] bg-white rounded-[10px] flex gap-6 items-center pl-[30px]">
+            <div class="w-[86px] h-[52px] flex items-center justify-center text-[#01754f] font-bond hover:bg-[#DDDDDD]">
+                <a href="#">Grow</a>
+            </div>
+            <div class="w-[112px] h-[52px] flex items-center justify-center hover:bg-[#DDDDDD]">
+                <a href="#">Catch up</a>
+            </div>
+        </div>
+        <div class="w-[780px] h-[52px] bg-white rounded-[10px] flex  items-center justify-between p-2 mt-4 text-[#000000e6]">
+            <span>No pending invitations</span>
+            <span class="font-bold text-[#555]">Manage</span>
+        </div>
+        <div class="w-[804px] h-[124px] bg-white mt-4 rounded-[10px] p-2">
+            <div class="flex items-center justify-between">
+                <span>
+                    Stay in touch through daily games
+                </span>
+                <div class="flex items-center gap-2">
+                    <div style="border: 1px solid #D9D9D9;" class="w-[32px] h-[32px] flex items-center justify-center rounded-full">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div style="border: 1px solid #D9D9D9;" class="w-[32px] h-[32px] flex items-center justify-center rounded-full">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

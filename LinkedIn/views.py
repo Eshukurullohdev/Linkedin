@@ -28,3 +28,6 @@ def delete_post(request, post_id):
     post.delete()
     return redirect('home')
 
+
+def networks(request):
+    return render(request, 'network.html')
