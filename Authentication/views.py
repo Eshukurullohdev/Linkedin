@@ -3,7 +3,8 @@ from .models import Profil
 from LinkedIn.models import Post
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
-from LinkedIn.forms import ProfileEditForm, ProfileImageForm
+from LinkedIn.forms import ProfileEditForm
+
 def profil(request):
     profil = Profil.objects.all()
     post = Post.objects.all()
@@ -40,14 +41,3 @@ def edit_profile(request, pk):
     else:
         form = ProfileEditForm(instance=profile)
     return render(request, 'edit_profile.html', {'form': form})
-
-def update_photo(request):
-    if request.method == 'POST':
-        form = ProfileImageForm(request.POST, request.FILES, instance=request.user.profil)
-        if form.is_valid():
-            form.save()  # Rasmni saqlash
-            return redirect('profile')  # Yangilangan rasmni ko'rsatadigan profil sahifasiga yo'naltirish
-    else:
-        form = ProfileImageForm(instance=request.user.profil)  # Foydalanuvchining profilini formaga uzatish
-
-    return render(request, 'update_photo.html', {'form': form})
