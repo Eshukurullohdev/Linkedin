@@ -41,3 +41,11 @@ def edit_profile(request, pk):
         form = ProfileEditForm(instance=profile)
     return render(request, 'edit_profile.html', {'form': form})
 
+def update_photo(request):
+    if request.method == 'POST' and request.FILES.get('photo'):
+        profile = request.user.userprofile
+        profile.photo = request.FILES['photo']
+        profile.save()
+        return redirect('edit_profile')  # or your desired redirect
+    return redirect('edit_profile')
+    

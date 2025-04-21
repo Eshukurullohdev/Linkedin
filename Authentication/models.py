@@ -12,5 +12,13 @@ class Profil(models.Model):
     
     def __str__(self):
         return f"Profile {self.pk}"
-    
+
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to='user_photos/', default='default.jpg')
+
+    def __str__(self):
+        return self.user.username
     
